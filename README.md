@@ -65,8 +65,7 @@ python watermark_wizard.py input_images output_images
 This will apply the default "Watermark" text in the bottom-right corner at 50% opacity.
 
 📂 Project Structure
-bash
-Copy code
+
 watermark-wizard/
 ├── watermark_wizard.py   # Main script
 ├── requirements.txt      # Python dependencies
