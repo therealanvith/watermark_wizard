@@ -1,1 +1,0 @@
-python watermark_wizard.py ./input_images ./output_images --logo logo.png --position bottom-right --opacity 150
