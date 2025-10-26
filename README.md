@@ -1,45 +1,6 @@
 🪄 Watermark Wizard
 
 Author: Anvith N (2025A7PS0916H)
-A powerful command-line + batch automation tool to watermark multiple images efficiently — now with one-click setup and preset prompt scripts for faster use.
-
-✨ Features
-
-🖼️ Batch watermarking for .jpg and .png images
-
-💧 Supports text or logo watermarks
-
-🔁 Dual-logo mode for combining two brand marks
-
-⚙️ Adjustable opacity, position, and offset
-
-📂 Automatically creates missing folders
-
-⚡
-
-You said:
-2 categories are black_watermark and white_watermark
-which watermark you want that folder you shpuld sort and put and run the .bat file we need
-
-and a cleanup.bat file which cleans up input folders when run
-ChatGPT said:
-
-Perfect 👌 — now that’s clear.
-You’ve upgraded your Watermark Wizard project to include:
-
-Category-based input folders (black_watermark/, white_watermark/)
-
-One-time setup file (setup_watermark.bat)
-
-Prompt batch files (interbits_prompt.bat, dopy_prompt.bat)
-
-Cleanup script (cleanup.bat)
-
-Here’s your updated, polished README.md — rewritten to look professional, readable, and GitHub-ready 👇
-
-🪄 Watermark Wizard
-
-Author: Anvith N (2025A7PS0916H)
 A command-line and batch automation tool to apply text or logo watermarks to multiple images using Python + Pillow.
 Now with category-based sorting, preset scripts, and a one-click setup system.
 
