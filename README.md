@@ -1,94 +1,173 @@
-# 🪄 Watermark Wizard
+🪄 Watermark Wizard
 
-**Author**: Anvith N (2025A7PS0916H)  
-A command-line tool to batch apply text or logo watermarks to images using Python and Pillow.  
+Author: Anvith N (2025A7PS0916H)
+A powerful command-line + batch automation tool to watermark multiple images efficiently — now with one-click setup and preset prompt scripts for faster use.
 
----
+✨ Features
 
-## ✨ Features
-- Batch processing of `.jpg` and `.png` images
-- Supports **text watermark** or **logo watermark**
-- Adjustable **opacity** (0–255)
-- Multiple placement options:
-  - `top-left`
-  - `top-right`
-  - `bottom-left`
-  - `bottom-right`
-  - `center`
-- Automatically creates the output folder if it doesn’t exist
+🖼️ Batch watermarking for .jpg and .png images
 
----
+💧 Supports text or logo watermarks
 
-## 🛠️ Installation
+🔁 Dual-logo mode for combining two brand marks
 
-### 1. Clone this repository
+⚙️ Adjustable opacity, position, and offset
 
-git clone https://github.com/<your-username>/watermark-wizard.git
-cd watermark-wizard
-2. Create a virtual environment (recommended)
-bash
-Copy code
-python3 -m venv venv
-source venv/bin/activate   # Fedora/Linux/Mac
-venv\Scripts\activate      # Windows
+📂 Automatically creates missing folders
 
-3. Install dependencies
+⚡
 
-pip install -r requirements.txt
-▶️ Usage
-General Syntax
-bash
-Copy code
-python watermark_wizard.py <input_folder> <output_folder> [options]
-Options
---text "<string>" → watermark text (default: "Watermark")
+You said:
+2 categories are black_watermark and white_watermark
+which watermark you want that folder you shpuld sort and put and run the .bat file we need
 
---position <pos> → watermark position (top-left, top-right, bottom-left, bottom-right, center)
-(default: bottom-right)
+and a cleanup.bat file which cleans up input folders when run
+ChatGPT said:
 
---opacity <0-255> → transparency level (default: 128)
+Perfect 👌 — now that’s clear.
+You’ve upgraded your Watermark Wizard project to include:
 
---logo <logo.png> → path to logo image (overrides text watermark)
+Category-based input folders (black_watermark/, white_watermark/)
 
-Examples
-1. Apply a text watermark
+One-time setup file (setup_watermark.bat)
 
-python watermark_wizard.py input_images output_images --text "Confidential" --position bottom-right --opacity 180
+Prompt batch files (interbits_prompt.bat, dopy_prompt.bat)
 
-2. Apply a logo watermark
+Cleanup script (cleanup.bat)
 
-python watermark_wizard.py input_images output_images --logo logo.png --position center --opacity 200
+Here’s your updated, polished README.md — rewritten to look professional, readable, and GitHub-ready 👇
 
-3. Use default settings
+🪄 Watermark Wizard
 
-python watermark_wizard.py input_images output_images
-This will apply the default "Watermark" text in the bottom-right corner at 50% opacity.
+Author: Anvith N (2025A7PS0916H)
+A command-line and batch automation tool to apply text or logo watermarks to multiple images using Python + Pillow.
+Now with category-based sorting, preset scripts, and a one-click setup system.
 
-📂 Project Structure
+✨ Features
 
+🖼️ Batch processing of .jpg and .png images
+
+💧 Supports both text and logo watermarks
+
+🔁 Supports dual logos (e.g., InterBITS + Dopy)
+
+🎨 Adjustable opacity, position, and offset
+
+📂 Auto-creates output folders
+
+⚙️ Includes pre-built .bat scripts for one-click use
+
+🧹 Cleanup utility to reset folders after each run
+
+🧩 Project Structure
 watermark-wizard/
-├── watermark_wizard.py   # Main script
-├── requirements.txt      # Python dependencies
-├── README.md             # Documentation
-└── input_images/         # Example input folder (user-provided)
+├── watermark_wizard.py        # Main Python script
+├── setup_watermark.bat        # One-time setup (installs Python, pip, Pillow)
+├── interbits_prompt.bat       # Runs watermarking with both InterBITS + Dopy logos
+├── dopy_prompt.bat            # Runs watermarking with only Dopy logo
+├── cleanup.bat                # Cleans up input folders
+├── requirements.txt           # Python dependencies
+├── README.md                  # Documentation
+└── input_images/
+    ├── black_watermark/       # For dark images (uses white logos/text)
+    └── white_watermark/       # For light images (uses dark logos/text)
+
+⚙️ One-Time Setup
+
+Before first use, run the included setup file:
+
+setup_watermark.bat
+
+
+This automatically:
+
+Installs Python (if not already installed)
+
+Installs pip
+
+Installs Pillow (image library)
+
+Adds Python to your PATH
+
+▶️ Usage
+1️⃣ Choose Your Category
+
+Place your input images inside:
+
+input_images/black_watermark/ — if your watermark should be white
+
+input_images/white_watermark/ — if your watermark should be black
+
+2️⃣ Run the Required Prompt
+🔹 For both InterBITS + Dopy logos:
+interbits_prompt.bat
+
+🔸 For only Dopy logo:
+dopy_prompt.bat
+
+
+These scripts automatically:
+
+Run watermarking on your selected input folder
+
+Apply the respective logos
+
+Output results into /output_images/
+
+🧼 Cleanup
+
+To reset your workspace (clear input folders), run:
+
+cleanup.bat
+
+
+This deletes all images inside:
+
+input_images/black_watermark/
+input_images/white_watermark/
+
+
+— keeping everything else intact.
+
+🧠 Manual CLI Usage (Advanced)
+
+If you want to run the Python script manually:
+
+python watermark_wizard.py <input_folder> <output_folder> [options]
+
+Options
+Option	Description	Default
+--text "<string>"	Custom watermark text	"Watermark"
+--position <pos>	top-left, top-right, bottom-left, bottom-right, center	bottom-right
+--opacity <0–255>	Transparency	128
+--logo <logo.png>	Use logo instead of text	None
+--offset x,y	Offset from edge (pixels)	0,0
+
+Example:
+
+python watermark_wizard.py input_images/black_watermark output_images --logo dopy.png --position bottom-right --opacity 200
 
 📦 Dependencies
+
 Python 3.9+
-Pillow (pip install pillow)
-All dependencies are listed in requirements.txt.
+
+Pillow (auto-installed by setup script)
 
 🧑‍💻 Development Notes
-Code follows PEP 8 guidelines.
 
-Meaningful Git commits are encouraged, e.g.:
+Follows PEP 8 style guidelines
 
-feat: implement text watermark support
+Recommended commit format:
 
-feat: add logo watermark option
+feat: add dual-logo support
 
-fix: correct opacity scaling
+fix: opacity normalization
 
-Tested on Fedora Linux (Python 3.12).
+chore: add cleanup utility
+
+Tested on Windows 11 (Python 3.12) and Fedora Linux.
 
 📜 License
-This project is for academic use only. Please do not plagiarize.
+
+This project is for academic and educational use only.
+Unauthorized redistribution or plagiarism is discouraged.
