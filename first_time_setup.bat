@@ -71,4 +71,7 @@ echo   ✅ All Done! Python, pip, and Pillow are installed.
 echo =====================================================
 
 pause
+
+mkdir input_images\dopy_w__atmos_w input_images\dopy_w__atmos_b input_images\dopy_b__atmos_w input_images\dopy_b__atmos_b output_images
+
 exit
